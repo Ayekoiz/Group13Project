@@ -402,15 +402,27 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Chaim Coussens: UI, Coding, Some sprites
 
-    (put your nane here)
+    Alexander Tobal: Assets,
+    Level Design
 
+    (put your name here)
 
-    assets
-    used
+    Assets used:
 
-    font: Alagard by Hewett Tsoi
+    Font: Alagard by
+    Hewett Tsoi
 
-    (put the assets here)'
+    Pixel 2D Castle Tileset by Szadi Art
+
+    2D Platfrom Tile Set
+    - Cave by Iphigenia Pixels
+
+    Pixel Art Platformer - Village by Cainos
+
+    Pixel
+    Units - SPUM Bundle by Soonsoon
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ac62545ed788b4d408eba99b46d0fb7f, type: 2}
   m_sharedMaterial: {fileID: -5491285179949848017, guid: ac62545ed788b4d408eba99b46d0fb7f, type: 2}
