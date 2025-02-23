@@ -217,6 +217,7 @@ GameObject:
   - component: {fileID: 63848658}
   - component: {fileID: 63848656}
   - component: {fileID: 63848657}
+  - component: {fileID: 63848659}
   m_Layer: 0
   m_Name: Progress Camera
   m_TagString: Untagged
@@ -292,13 +293,27 @@ Transform:
   m_GameObject: {fileID: 63848655}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.32, z: -10.084982}
+  m_LocalPosition: {x: 1.25, y: 0, z: -10.084982}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1978755035}
-  m_Father: {fileID: 644530071}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &63848659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63848655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7be935ba0d77bba41abda57729157589, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 644530069}
+  sceneName: Level3
 --- !u!1 &165264991
 GameObject:
   m_ObjectHideFlags: 0
@@ -1344,9 +1359,7 @@ Transform:
   m_LocalPosition: {x: -9.21, y: -3.32, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2141437072}
-  - {fileID: 63848658}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &644530072
@@ -3728,6 +3741,7 @@ GameObject:
   - component: {fileID: 2141437072}
   - component: {fileID: 2141437071}
   - component: {fileID: 2141437070}
+  - component: {fileID: 2141437073}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3803,12 +3817,26 @@ Transform:
   m_GameObject: {fileID: 2141437069}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.32, z: -10}
+  m_LocalPosition: {x: 1.25, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 644530071}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2141437073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2141437069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7be935ba0d77bba41abda57729157589, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 644530069}
+  sceneName: Level3
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -3816,6 +3844,8 @@ SceneRoots:
   - {fileID: 1909759075}
   - {fileID: 928272939}
   - {fileID: 239982847}
+  - {fileID: 2141437072}
+  - {fileID: 63848658}
   - {fileID: 644530071}
   - {fileID: 293043018}
   - {fileID: 1866866381}

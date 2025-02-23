@@ -20,7 +20,7 @@ public class progress_bar : MonoBehaviour
     {
         // Level1
         if(sceneName == "Level1" && player.transform.position.x != oldPositionX && player.transform.position.x >= -8.95 && player.transform.position.x <= 36.6) {
-            this.transform.position = new Vector3(this.transform.position.x + ((player.transform.position.x - oldPositionX) / 3.2536f), player.transform.position.y + 2.45f, 0f);
+            this.transform.position = new Vector3(this.transform.position.x + ((player.transform.position.x - oldPositionX) / 3.2536f), this.transform.position.y, 0f);
             oldPositionX = player.transform.position.x;
         }
 
@@ -32,7 +32,7 @@ public class progress_bar : MonoBehaviour
 
         // Level3
         if(sceneName == "Level3" && player.transform.position.x != oldPositionX && player.transform.position.x >= -9.21 && player.transform.position.x <= 80.0) {
-            this.transform.position = new Vector3(this.transform.position.x + ((player.transform.position.x - oldPositionX) / 6.3721f), player.transform.position.y + 3.32f, 0f);
+            this.transform.position = new Vector3(this.transform.position.x + ((player.transform.position.x - oldPositionX) / 6.3721f), this.transform.position.y, 0f);
             oldPositionX = player.transform.position.x;
         }
     }
