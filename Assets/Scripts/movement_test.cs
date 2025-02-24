@@ -14,16 +14,16 @@ public class movement_test : MonoBehaviour
     void Update()
     {
         if(Input.GetKey(KeyCode.D)){
-            this.transform.position = new Vector3(this.transform.position.x + .01f, transform.position.y, transform.position.z);
+            this.transform.position = new Vector3(this.transform.position.x + .05f, transform.position.y, transform.position.z);
         }
         if(Input.GetKey(KeyCode.A)){
-            this.transform.position = new Vector3(this.transform.position.x - .01f, transform.position.y, transform.position.z);
+            this.transform.position = new Vector3(this.transform.position.x - .05f, transform.position.y, transform.position.z);
         }
         if(Input.GetKey(KeyCode.W)){
-            this.transform.position = new Vector3(this.transform.position.x, transform.position.y + .01f, transform.position.z);
+            this.transform.position = new Vector3(this.transform.position.x, transform.position.y + .05f, transform.position.z);
         }
         if(Input.GetKey(KeyCode.S)){
-            this.transform.position = new Vector3(this.transform.position.x, transform.position.y - .01f, transform.position.z);
+            this.transform.position = new Vector3(this.transform.position.x, transform.position.y - .05f, transform.position.z);
         }
     }
 }

@@ -1345,7 +1345,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 10}
-  m_LocalScale: {x: 0.68783, y: 0.66644084, z: 1}
+  m_LocalScale: {x: 0.77, y: 0.66644084, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 626722453}
@@ -1798,7 +1798,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.21960784, g: 0.21960784, b: 0.21960784, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -2509,6 +2509,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1217246679}
   sceneName: Level2
+  bar: {fileID: 1545432676}
 --- !u!212 &1249617237
 SpriteRenderer:
   m_ObjectHideFlags: 0
