@@ -18,13 +18,14 @@ public class UI_Hud : MonoBehaviour
     private int score = 0;
     private float time = 0;
     public bool gameispaused = false;
-
+    
     void Update()
     {
+        //hud
         time += Time.deltaTime;
         Score.text = "score:" + score;
         Timetext.text ="time:"+((float)((int)(time*10)))/10;
-
+        // turn on and off the pause menu
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (gameispaused)

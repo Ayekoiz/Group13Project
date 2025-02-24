@@ -21,6 +21,7 @@ public class Bezier_Curve : MonoBehaviour
         Gizmos.DrawLine(point3.position, point4.position);
 
     }
+    //the Bezier_Curve it self
     public Vector2 GetVector2(float t)
     {
         return Mathf.Pow(1 - t, 3) * point1.position +

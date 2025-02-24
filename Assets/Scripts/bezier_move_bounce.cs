@@ -7,7 +7,7 @@ public class bezier_move_bounce : Bezier_Curve
     [SerializeField] Transform movingthing;
     [SerializeField] float speed;
     float time = 0;
-
+    //uses the Bezier_Curve to move the movingthing using a Sin fuction that changes over time.
     void FixedUpdate()
     {
         time += Time.fixedDeltaTime;
