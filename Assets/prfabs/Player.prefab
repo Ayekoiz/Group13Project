@@ -5051,10 +5051,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movespeed: 3
-  JumpV: 5
+  JumpV: 5.5
   drag: 0.4
   Gravity: 10
   vilocity: {x: 0, y: 0}
+  cooldown: 0
   chargeCooldown: 1
   chargehitTime: 0.2
   stabCoolfdown: 0.25
@@ -5063,6 +5064,7 @@ MonoBehaviour:
   Chargeattack: {fileID: 8049695304330906956}
   stab: {fileID: 828360322846446230}
   slash: {fileID: 8032159609756347609}
+  hud: {fileID: 0}
 --- !u!50 &2183242209267623947
 Rigidbody2D:
   serializedVersion: 4
