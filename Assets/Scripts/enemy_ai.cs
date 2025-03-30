@@ -11,7 +11,9 @@ public class enemy_ai : MonoBehaviour
 	Vector3 Destination;
 	Vector3 Destination_Player;
 	float Distance;
-	public Transform[] Waypoints;
+	Vector3[] Waypoints = new Vector3[2];
+	public float Left_Waypoint;
+	public float Right_Waypoint;
     int current_Waypoint = 0;
 	public GameObject player;
     public float passiveSpeed;
@@ -24,6 +26,11 @@ public class enemy_ai : MonoBehaviour
 
     void Start()
     {
+		Vector3 Waypoint_1 = new Vector3(Left_Waypoint, gameObject.transform.position.y, gameObject.transform.position.z);
+		Vector3 Waypoint_2 = new Vector3(Right_Waypoint, gameObject.transform.position.y, gameObject.transform.position.z);
+		Waypoints[0] = Waypoint_1;
+		Waypoints[1] = Waypoint_2;
+
 		activeSpeed = passiveSpeed + 0.5f;
     }
 
@@ -106,10 +113,10 @@ public class enemy_ai : MonoBehaviour
 	//The method for switching waypoints
     void Waypoints_Search()
     {
-		Distance = Vector3.Distance(gameObject.transform.position, Waypoints[current_Waypoint].position);
+		Distance = Vector3.Distance(gameObject.transform.position, Waypoints[current_Waypoint]);
 		if(Distance > 0.5f)
 		{
-			Destination = Waypoints[current_Waypoint].position;
+			Destination = Waypoints[current_Waypoint];
 		}
 		else
 		{
@@ -121,7 +128,7 @@ public class enemy_ai : MonoBehaviour
 			{					
                 current_Waypoint = 0;
 			}
-            Destination = Waypoints[current_Waypoint].position;
+            Destination = Waypoints[current_Waypoint];
 		}
     }
 }
