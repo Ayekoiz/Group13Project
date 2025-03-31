@@ -62,6 +62,13 @@ public class enemy_ai : MonoBehaviour
 		Destination_Player = player.transform.position;
 		Distance = Vector3.Distance(gameObject.transform.position, Destination_Player);
 
+		if(Type_Range)
+		{
+			if(Distance <= 5.00f)
+			{
+				aiBehaviors = Behaviors.Active;
+			}
+		}
 		if(Distance <= 2.00f)
 		{
 			aiBehaviors = Behaviors.Active;
@@ -78,13 +85,14 @@ public class enemy_ai : MonoBehaviour
         Distance = Vector3.Distance(gameObject.transform.position, player.transform.position);
 		if(Type_Range)
 		{
-			if(Distance > 6.00f)
+			if(Distance > 5.00f)
 			{
 				aiBehaviors = Behaviors.Passive;
 			}else if(remainingTime <= 0)
 			{
 				Ranged_Enemy();
 				remainingTime = 2;
+				Destination = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, player.transform.position.z);
 			}
 		}else if(Type_Asmodeus)
 		{
