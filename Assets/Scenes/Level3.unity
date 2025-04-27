@@ -5764,6 +5764,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: UI_Change_Scene_buttion, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 4488134162749453975, guid: dbf82b8c0a3e2444ea259cc83130edb1, type: 3}
+      propertyPath: m_text
+      value: You Win
+      objectReference: {fileID: 0}
     - target: {fileID: 6278399658116310800, guid: dbf82b8c0a3e2444ea259cc83130edb1, type: 3}
       propertyPath: m_Name
       value: Win Variant
