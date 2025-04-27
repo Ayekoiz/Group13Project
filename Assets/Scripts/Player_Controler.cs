@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Animations;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class Player_Controler : MonoBehaviour
 {
@@ -29,6 +31,7 @@ public class Player_Controler : MonoBehaviour
     [SerializeField] GameObject stab;
     [SerializeField] GameObject slash;
     [SerializeField] UI_Hud hud;
+    [SerializeField] bool canSuper = false;
     int Health = 3;
     Rigidbody2D rb = null;
     SPUM_Prefabs animator = null;
@@ -46,10 +49,11 @@ public class Player_Controler : MonoBehaviour
         hud.healthchange (Health);
         cooldown -= Time.deltaTime;
         //get input
-        movederection = Input.GetAxis("Horizontal");
+        float tempmovederection = Input.GetAxis("Horizontal");
+        if (tempmovederection > 0.03 || tempmovederection < -0.03 ) movederection = tempmovederection;
         jumpButtion = 0.4 < Input.GetAxis("Jump");
         bool attack1 = 0.4 < Input.GetAxis("Fire1");
-        bool attack2 = 0.4 < Input.GetAxis("Fire2");
+        bool attack2 = (0.4 < Input.GetAxis("Fire2"))&& canSuper;
         transform.localScale = new Vector3(-Mathf.Sign(movederection), 1, 1);
         // animator and attacks
         if (charging && cooldown<= chargehitTime)
@@ -62,7 +66,7 @@ public class Player_Controler : MonoBehaviour
                 
                 BadGuyHealth badguy = hits[i].collider.gameObject.GetComponent<BadGuyHealth>();
                 if (badguy != null) {
-                    badguy.takeDamige(PlayerAtatckType.magic);
+                    score( badguy.takeDamige(PlayerAtatckType.magic));
                 }
             }
             //attack with charge
@@ -90,7 +94,7 @@ public class Player_Controler : MonoBehaviour
                         BadGuyHealth badguy = hits[i].collider.gameObject.GetComponent<BadGuyHealth>();
                         if (badguy != null)
                         {
-                            badguy.takeDamige(PlayerAtatckType.Stab);
+                            score(badguy.takeDamige(PlayerAtatckType.Stab));
                         }
                     }
                     animator.PlayAnimation(PlayerState.ATTACK, 4);
@@ -105,7 +109,7 @@ public class Player_Controler : MonoBehaviour
                         BadGuyHealth badguy = hits[i].collider.gameObject.GetComponent<BadGuyHealth>();
                         if (badguy != null)
                         {
-                            badguy.takeDamige(PlayerAtatckType.AirSlash);
+                            score(badguy.takeDamige(PlayerAtatckType.AirSlash));
                         }
                     }
                     slash.SetActive(true);
@@ -161,9 +165,16 @@ public class Player_Controler : MonoBehaviour
         vilocity = new Vector2(pos.x-transform.position.x, pos.y- transform.position.y);
         if (Health <= 0)
         {
-            //lose game
-            SceneManager.LoadScene(0);
+            hud.GameOver();
         }
     }
-    
+    public void bounce()
+    {
+        vilocity.y = 10;
+    }
+    public void score(bool shouldscore)
+    {
+        if (!shouldscore) return;
+        hud.addScore(1);
+    }
 }

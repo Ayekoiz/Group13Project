@@ -7,7 +7,7 @@ public class BadGuyHealth : MonoBehaviour
     public bool isImmuneStab = false;
     public bool isImmunestomp = false;
     public bool isImmuneAirSlash = false;
-    public bool takeDamige(PlayerAtatckType atatckType)
+    virtual public bool takeDamige(PlayerAtatckType atatckType)
     {
         //Debug.Log("oof");
         switch (atatckType)
@@ -55,6 +55,13 @@ public class BadGuyHealth : MonoBehaviour
         GameObject touched = collision.gameObject;
         if (touched.GetComponent<Player_Controler>() != null)
         {
+            if ((touched.GetComponent<Transform>().position.y > transform.position.y+0.5)&&!isImmunestomp)
+            {
+                takeDamige(PlayerAtatckType.Stomp);
+                touched.GetComponent<Player_Controler>().bounce();
+                touched.GetComponent<Player_Controler>().score(true);
+                return;
+            }
             touched.GetComponent<Player_Controler>().hurt(transform.position);
         }
     }

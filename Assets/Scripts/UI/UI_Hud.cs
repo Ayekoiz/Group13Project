@@ -7,6 +7,8 @@ public class UI_Hud : MonoBehaviour
 {
     // [SerializeField] makes things not public but you can change them in the editer 
     [SerializeField] GameObject pause_menu;
+    [SerializeField] GameObject Daeth_menu;
+    [SerializeField] GameObject Win_menu;
     [SerializeField] GameObject helth1;
     [SerializeField] GameObject helth2;
     [SerializeField] GameObject helth3;
@@ -18,6 +20,8 @@ public class UI_Hud : MonoBehaviour
     private int score = 0;
     private float time = 0;
     public bool gameispaused = false;
+    public bool Playertisdead = false;
+    public bool levelisWon = false;
     
     void Update()
     {
@@ -26,7 +30,7 @@ public class UI_Hud : MonoBehaviour
         Score.text = "score:" + score;
         Timetext.text ="time:"+((float)((int)(time*10)))/10;
         // turn on and off the pause menu
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !Playertisdead && !levelisWon)
         {
             if (gameispaused)
             {
@@ -68,7 +72,24 @@ public class UI_Hud : MonoBehaviour
     public void resumeGame()
     {
         gameispaused=false;
+        Playertisdead = false;
+        levelisWon = false;
+        Win_menu.SetActive(false);
         pause_menu.SetActive(false);
+        Daeth_menu.SetActive(false);
         Time.timeScale = 1;
+
+    }
+    public void GameOver()
+    {
+        Playertisdead = true;
+        Daeth_menu.SetActive(true);
+        Time.timeScale = 0;
+    }
+    public void Win()
+    {
+        levelisWon = true;
+        Win_menu.SetActive(true);
+        Time.timeScale = 0;
     }
 }
