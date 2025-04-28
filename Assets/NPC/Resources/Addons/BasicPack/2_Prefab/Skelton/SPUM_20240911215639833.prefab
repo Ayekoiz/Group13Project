@@ -7408,9 +7408,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c91e3986697fb240b15a7197e6a7c73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isImmuneStab: 1
+  isImmuneStab: 0
   isImmunestomp: 0
-  isImmuneAirSlash: 0
+  isImmuneAirSlash: 1
 --- !u!50 &7745800332004200369
 Rigidbody2D:
   serializedVersion: 4

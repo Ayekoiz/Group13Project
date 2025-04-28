@@ -8,6 +8,7 @@ public class camera_follow : MonoBehaviour
     float oldPositionX;
     float oldPositionY;
     public string sceneName;
+    bool boss = false;
 
     void Start()
     {
@@ -30,7 +31,14 @@ public class camera_follow : MonoBehaviour
 
         // Level3
         if(sceneName == "Level3" && player.transform.position.x >= 1.25 && player.transform.position.x <= 78.5) {
-            this.transform.position = new Vector3(player.transform.position.x, this.transform.position.y, -10f);
+            if(boss == false)
+            {
+                this.transform.position = new Vector3(player.transform.position.x, this.transform.position.y, -10f);
+            }
+            if(player.transform.position.x > 78.4)
+            {
+                boss = true;
+            }
         }
     }
 }

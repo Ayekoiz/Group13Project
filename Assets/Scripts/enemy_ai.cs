@@ -20,7 +20,6 @@ public class enemy_ai : MonoBehaviour
 	float activeSpeed;
 	float speed;
 	public bool Type_Range;
-	public bool Type_Asmodeus;
 
 	public GameObject Projectile;
 	float remainingTime = 0;
@@ -93,15 +92,6 @@ public class enemy_ai : MonoBehaviour
 				Ranged_Enemy();
 				remainingTime = 2;
 				Destination = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, player.transform.position.z);
-			}
-		}else if(Type_Asmodeus)
-		{
-			if(Distance > 5.00f)
-			{
-				aiBehaviors = Behaviors.Passive;
-			}else
-			{
-				Destination = new Vector3(player.transform.position.x, gameObject.transform.position.y, player.transform.position.z);
 			}
 		}else if(Distance > 3.00f)
         {

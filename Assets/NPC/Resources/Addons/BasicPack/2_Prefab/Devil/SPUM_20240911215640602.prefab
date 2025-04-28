@@ -6836,7 +6836,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isImmuneStab: 0
-  isImmunestomp: 0
+  isImmunestomp: 1
   isImmuneAirSlash: 1
 --- !u!50 &5015440804319454999
 Rigidbody2D:

@@ -3708,8 +3708,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5445290070679724821}
   - component: {fileID: 2818193864024800565}
-  - component: {fileID: -315008719534630279}
-  - component: {fileID: 6376463342692698715}
+  - component: {fileID: 5805101054027732325}
+  - component: {fileID: 6284473983006337176}
   - component: {fileID: -718762337450721385}
   - component: {fileID: 375316530011992442}
   m_Layer: 5
@@ -6764,7 +6764,7 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 4c70df3312bb83346a1bf065b30d3467, type: 2}
   - {fileID: 7400000, guid: 1ef525d53ae254f7d82ef364ced85490, type: 2}
   - {fileID: 7400000, guid: fabe4f140fdb9cb448bc941c7c93e8b6, type: 2}
---- !u!114 &-315008719534630279
+--- !u!114 &5805101054027732325
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6773,16 +6773,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 5574444457335267636}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f60c404506ba57645ab4c26f45c1b6bd, type: 3}
+  m_Script: {fileID: 11500000, guid: a4a8724c00788844cb7912710c74e623, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Left_Waypoint: 0
   Right_Waypoint: 0
   player: {fileID: 0}
-  passiveSpeed: 0
-  Type_Range: 0
+  speed: 0
   Projectile: {fileID: 0}
---- !u!114 &6376463342692698715
+--- !u!114 &6284473983006337176
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6791,12 +6790,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 5574444457335267636}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c91e3986697fb240b15a7197e6a7c73, type: 3}
+  m_Script: {fileID: 11500000, guid: 6a81e4da6dded1e4bb992f3991b3eff1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isImmuneStab: 1
+  isImmuneStab: 0
   isImmunestomp: 0
-  isImmuneAirSlash: 1
+  isImmuneAirSlash: 0
+  bossHelath: 3
+  hud: {fileID: 0}
 --- !u!50 &-718762337450721385
 Rigidbody2D:
   serializedVersion: 4

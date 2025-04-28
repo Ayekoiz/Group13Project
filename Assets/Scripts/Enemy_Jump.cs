@@ -32,7 +32,7 @@ public class Enemy_Jump : MonoBehaviour
         {
             OnGround = false;
             velocity.y = JumpV;
-            remainingTime = 5;
+            remainingTime = 3;
         } 
         else
             velocity.y = 0f;
