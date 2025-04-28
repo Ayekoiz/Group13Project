@@ -35,11 +35,15 @@ public class Player_Controler : MonoBehaviour
     int Health = 3;
     Rigidbody2D rb = null;
     SPUM_Prefabs animator = null;
+
+    private AudioSource audioSource;
     public void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<SPUM_Prefabs>();
         animator.OverrideControllerInit();
+
+        audioSource = GetComponent<AudioSource>();
         
     }
 
@@ -79,6 +83,7 @@ public class Player_Controler : MonoBehaviour
                 charging = true;
                 ChargeEfect.SetActive(true);
                 animator.PlayAnimation(PlayerState.ATTACK, 5);
+                audioSource.Play();
             }
             else if (attack1)
             {
@@ -98,6 +103,7 @@ public class Player_Controler : MonoBehaviour
                         }
                     }
                     animator.PlayAnimation(PlayerState.ATTACK, 4);
+                    audioSource.Play();
                 }
                 else
                 {
@@ -114,6 +120,7 @@ public class Player_Controler : MonoBehaviour
                     }
                     slash.SetActive(true);
                     animator.PlayAnimation(PlayerState.ATTACK, 1);
+                    audioSource.Play();
                 }
             }
             else

@@ -24,12 +24,16 @@ public class enemy_ai : MonoBehaviour
 	public GameObject Projectile;
 	float remainingTime = 0;
 
+	private AudioSource audioSource;
+
     void Start()
     {
 		Vector3 Waypoint_1 = new Vector3(Left_Waypoint, gameObject.transform.position.y, gameObject.transform.position.z);
 		Vector3 Waypoint_2 = new Vector3(Right_Waypoint, gameObject.transform.position.y, gameObject.transform.position.z);
 		Waypoints[0] = Waypoint_1;
 		Waypoints[1] = Waypoint_2;
+
+		audioSource = GetComponent<AudioSource>();
 
 		activeSpeed = passiveSpeed + 0.5f;
     }
@@ -111,10 +115,12 @@ public class enemy_ai : MonoBehaviour
 		if(player.transform.position.x - gameObject.transform.position.x <= 0)
 		{
 			bulletRig.velocity = new Vector2(-4.0f, 0.0f);
+			audioSource.Play();
 		} else
 		{
 			bulletRig.velocity = new Vector2(4.0f, 0.0f);
-		}
+            audioSource.Play();
+        }
 		Destroy(newProjectile, 5);
 	}
 
